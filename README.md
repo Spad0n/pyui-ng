@@ -11,7 +11,7 @@ from pyui_ng import ui
 def main():
 	app = ui.UI()
 	window = ui.Window('Window', 800, 600)
-	window.set_margined = True
+	window.set_margined(True)
 	
 	def close(win: ui.Window):
 		app.stop()

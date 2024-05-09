@@ -17,7 +17,7 @@ buildPythonPackage rec {
     cython
     wheel
 
-    # C compiler
+    # build tools for C
     pkg-config
     meson
     ninja
