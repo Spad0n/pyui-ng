@@ -6,7 +6,7 @@ Python bindings for [libui-ng](https://github.com/libui-ng/libui-ng) using Cytho
 
 Example
 ```python
-from pyui_ng import ui
+import pyui_ng as ui
 
 def main():
 	app = ui.UI()
