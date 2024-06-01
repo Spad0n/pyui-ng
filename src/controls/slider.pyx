@@ -36,5 +36,5 @@ cdef class Slider(Control):
         return wrapper
     
     @staticmethod
-    cdef void callback(uiSlider *slider, void *f):
+    cdef void callback(uiSlider *slider, void *f) noexcept:
         (<object>f)(Slider.from_ptr(slider))

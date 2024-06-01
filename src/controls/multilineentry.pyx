@@ -30,7 +30,7 @@ cdef class BaseMultilineEntry(Control):
         return wrapper
 
     @staticmethod
-    cdef void callback(uiMultilineEntry *entry, void *f):
+    cdef void callback(uiMultilineEntry *entry, void *f) noexcept:
         (<object>f)(BaseMultilineEntry.from_ptr(entry))
 
 

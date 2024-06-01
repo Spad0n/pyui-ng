@@ -30,5 +30,5 @@ cdef class Checkbox(Control):
         return wrapper
 
     @staticmethod
-    cdef void callback(uiCheckbox *checkbox, void *f):
+    cdef void callback(uiCheckbox *checkbox, void *f) noexcept:
         (<object>f)(Checkbox.from_ptr(checkbox))

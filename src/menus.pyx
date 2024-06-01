@@ -27,7 +27,7 @@ cdef class MenuItem:
         return wrapper
 
     @staticmethod
-    cdef void callback(uiMenuItem *sender, uiWindow *window, void *f):
+    cdef void callback(uiMenuItem *sender, uiWindow *window, void *f) noexcept:
         (<object>f)(MenuItem.from_ptr(sender), Window.from_ptr(window))
 
 cdef class Menu:

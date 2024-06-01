@@ -76,17 +76,17 @@ cdef class Window(Control):
         return wrapper
 
     @staticmethod
-    cdef int callback_onclosed(uiWindow *window, void *f):
+    cdef int callback_onclosed(uiWindow *window, void *f) noexcept:
         cdef Window obj = Window.from_ptr(window)
         obj.destroy()
         return (<object>f)(obj)
 
     @staticmethod
-    cdef void callback_void(uiWindow *window, void *f):
+    cdef void callback_void(uiWindow *window, void *f) noexcept:
         (<object>f)(Window.from_ptr(window))
 
     @staticmethod
-    cdef int callback_menu(void *window):
+    cdef int callback_menu(void *window) noexcept:
         Window.from_ptr(<uiWindow *>window).destroy()
         uiQuit()
         return 0

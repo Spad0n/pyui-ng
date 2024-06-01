@@ -22,5 +22,5 @@ cdef class Spinbox(Control):
         return wrapper
     
     @staticmethod
-    cdef void callback(uiSpinbox *spinbox, void *f):
+    cdef void callback(uiSpinbox *spinbox, void *f) noexcept:
         (<object>f)(Spinbox.from_ptr(spinbox))

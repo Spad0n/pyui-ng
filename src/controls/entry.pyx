@@ -27,7 +27,7 @@ cdef class BaseEntry(Control):
         return wrapper
 
     @staticmethod
-    cdef void callback(uiEntry *entry, void *f):
+    cdef void callback(uiEntry *entry, void *f) noexcept:
         (<object>f)(BaseEntry.from_ptr(entry))
 
 

@@ -21,6 +21,6 @@ cdef class Button(Control):
         return wrapper
 
     @staticmethod
-    cdef void callback(uiButton *button, void *f):
+    cdef void callback(uiButton *button, void *f) noexcept:
         (<object>f)(Button.from_ptr(button))
 

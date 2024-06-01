@@ -37,5 +37,5 @@ cdef class Combobox(Control):
         return wrapper
 
     @staticmethod
-    cdef void callback(uiCombobox *combobox, void *f):
+    cdef void callback(uiCombobox *combobox, void *f) noexcept:
         (<object>f)(Combobox.from_ptr(combobox))

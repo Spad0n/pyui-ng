@@ -24,5 +24,5 @@ cdef class RadioButtons(Control):
         return wrapper
 
     @staticmethod
-    cdef void callback(uiRadioButtons *radiobuttons, void *f):
+    cdef void callback(uiRadioButtons *radiobuttons, void *f) noexcept:
         (<object>f)(RadioButtons.from_ptr(radiobuttons))
